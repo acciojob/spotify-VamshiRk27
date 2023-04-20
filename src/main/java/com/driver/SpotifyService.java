@@ -12,42 +12,83 @@ public class SpotifyService {
     SpotifyRepository spotifyRepository = new SpotifyRepository();
 
     public User createUser(String name, String mobile){
-
+        return spotifyRepository.createUser(name, mobile);
     }
 
     public Artist createArtist(String name) {
-
+        return spotifyRepository.createArtist(name);
     }
 
     public Album createAlbum(String title, String artistName) {
-
+        return spotifyRepository.createAlbum(title, artistName);
     }
 
     public Song createSong(String title, String albumName, int length) throws Exception {
-
+        return spotifyRepository.createSong(title,albumName,length);
     }
 
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {
-
+        return spotifyRepository.createPlaylistOnLength(mobile,title,length);
     }
 
     public Playlist createPlaylistOnName(String mobile, String title, List<String> songTitles) throws Exception {
-
+        return spotifyRepository.createPlaylistOnName(mobile,title,songTitles);
     }
 
     public Playlist findPlaylist(String mobile, String playlistTitle) throws Exception {
-
+        return spotifyRepository.findPlaylist(mobile, playlistTitle);
     }
 
     public Song likeSong(String mobile, String songTitle) throws Exception {
-
+        return spotifyRepository.likeSong(mobile, songTitle);
     }
 
     public String mostPopularArtist() {
-
+        return spotifyRepository.mostPopularArtist();
     }
 
     public String mostPopularSong() {
+        return spotifyRepository.mostPopularSong();
+    }
 
+    // Additional
+    // Extra
+    // Functions
+
+    public HashMap<Artist, List<Album>> getArtistAlbumMap() {
+        return spotifyRepository.getArtistAlbumMap();
+    }
+    public HashMap<Album, List<Song>> getAlbumSongMap() {
+        return spotifyRepository.getAlbumSongMap();
+    }
+    public HashMap<Playlist, List<Song>> getPlaylistSongMap() {
+        return spotifyRepository.getPlaylistSongMap();
+    }
+    public HashMap<Playlist, List<User>> getPlaylistListenerMap() {
+        return spotifyRepository.getPlaylistListenerMap();
+    }
+    public HashMap<User, Playlist> getCreatorPlaylistMap() {
+        return spotifyRepository.getCreatorPlaylistMap();
+    }
+    public HashMap<User, List<Playlist>> getUserPlaylistMap() {
+        return spotifyRepository.getUserPlaylistMap();
+    }
+    public HashMap<Song, List<User>> getSongLikeMap() {
+        return spotifyRepository.getSongLikeMap();
+    }
+    public List<User> getUsers() {
+        return spotifyRepository.getUsers();
+    }
+    public List<Song> getSongs() {
+        return spotifyRepository.getSongs();
+    }
+    public List<Playlist> getPlaylists() {
+        return spotifyRepository.getPlaylists();
+    }
+    public List<Album> getAlbums() {
+        return spotifyRepository.getAlbums();
+    }
+    public List<Artist> getArtists() {
+        return spotifyRepository.getArtists();
     }
 }
