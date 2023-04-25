@@ -203,6 +203,9 @@ public class SpotifyRepository {
                 break;
             }
         }
+        if(playlist==null){
+            throw new Exception("Playlist does not exist");
+        }
         for(User profile:users){
             if(profile.getMobile().equals(mobile)){
                 user=profile;
@@ -212,9 +215,7 @@ public class SpotifyRepository {
         if(user==null){
             throw new Exception("User does not exist");
         }
-        if(playlist==null){
-            throw new Exception("Playlist does not exist");
-        }
+
         //The user is a creator of the playlist and then in turn will be the listener of the playlist
         if((creatorPlaylistMap.containsKey(user) && creatorPlaylistMap.get(user).equals(playlist))){
             return playlist;
